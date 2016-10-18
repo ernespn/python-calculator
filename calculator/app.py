@@ -5,6 +5,7 @@ It contains the definition of routes and views for the application.
 
 from flask import Flask, jsonify
 app = Flask(__name__)
+CORS(app) #Cors configuration
 
 # Make the WSGI interface available at the top level so wfastcgi can get it.
 wsgi_app = app.wsgi_app
