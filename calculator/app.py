@@ -4,8 +4,10 @@ It contains the definition of routes and views for the application.
 """
 
 from flask import Flask, jsonify
+from flask_cors import CORS, cross_origin
+
 app = Flask(__name__)
-CORS(app) #Cors configuration
+cors = CORS(app, resources={r"/*": {"origins": "*"}}) 
 
 # Make the WSGI interface available at the top level so wfastcgi can get it.
 wsgi_app = app.wsgi_app
